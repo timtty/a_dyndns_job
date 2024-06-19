@@ -43,8 +43,10 @@ def get_my_ip():
 
 
 def run():
+    full_domain = f"{DNS_HOST}.{DNS_DOMAIN}"
+
     while True:
-        last_ip = socket.gethostbyname("core.holocube.xyz")
+        last_ip = socket.gethostbyname(full_domain)
         current_ip = get_my_ip()
 
         if current_ip:
